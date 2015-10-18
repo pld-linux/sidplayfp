@@ -1,12 +1,12 @@
 Summary:	Player for Commodore 64 music
 Summary(pl.UTF-8):	Odtwarzacz muzyki z Commodore 64
 Name:		sidplayfp
-Version:	1.1.0.1
+Version:	1.4.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://downloads.sourceforge.net/sidplay-residfp/%{name}-%{version}.tar.gz
-# Source0-md5:	b53a6487280f57cdf351523732096eab
+# Source0-md5:	89d99a3e431a453d600f18f32c108636
 URL:		http://sourceforge.net/projects/sidplay-residfp/
 BuildRequires:	alsa-lib-devel >= 1.0
 BuildRequires:	libsidplayfp-devel >= 1.0
@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README
+%doc AUTHORS README TODO
 %attr(755,root,root) %{_bindir}/sidplayfp
 %attr(755,root,root) %{_bindir}/stilview
 %{_mandir}/man1/sidplayfp.1*
