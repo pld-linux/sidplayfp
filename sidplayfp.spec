@@ -1,25 +1,26 @@
 Summary:	Player for Commodore 64 music
 Summary(pl.UTF-8):	Odtwarzacz muzyki z Commodore 64
 Name:		sidplayfp
-Version:	2.11.0
+Version:	2.16.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	https://downloads.sourceforge.net/sidplay-residfp/%{name}-%{version}.tar.gz
-# Source0-md5:	6e535e753da7daa797f9c9fabcffa1ff
+# Source0-md5:	128d43c07b9e7f01d2585adfe213e7c8
 URL:		https://sourceforge.net/projects/sidplay-residfp/
 BuildRequires:	alsa-lib-devel >= 1.0
 # libout123
 BuildRequires:	libmpg123-devel >= 1.0
-BuildRequires:	libsidplayfp-devel >= 2.11.0
-# C++11 mandatory, 14/17 optional
+# libsidplayfp, libstilview
+BuildRequires:	libsidplayfp-devel >= 2.16.1
+# C++11 mandatory, 14/17/20 optional
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel >= 1.0
-Requires:	alsa-lib >= 1.0
-Requires:	libmpg123 >= 1.0
-Requires:	libsidplayfp >= 2.11.0
-Requires:	pulseaudio-libs >= 1.0
+Requires:	alsa-lib%{?_isa} >= 1.0
+Requires:	libmpg123%{?_isa} >= 1.0
+Requires:	libsidplayfp%{?_isa} >= 2.16.1
+Requires:	pulseaudio-libs%{?_isa} >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README TODO
+%doc AUTHORS NEWS README TODO
 %attr(755,root,root) %{_bindir}/sidplayfp
 %attr(755,root,root) %{_bindir}/stilview
 %{_mandir}/man1/sidplayfp.1*
